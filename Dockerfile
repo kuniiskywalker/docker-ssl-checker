@@ -2,7 +2,7 @@ FROM centos
 
 RUN yum install -y httpd mod_ssl ruby
 
-ADD ssl.conf /etc/httpd/conf.d/ssl.conf
+ADD conf/ssl.conf /etc/httpd/conf.d/ssl.conf
 
 ADD check.sh /usr/local/bin/check.sh
 
