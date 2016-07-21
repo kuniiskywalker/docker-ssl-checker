@@ -1,8 +1,8 @@
 # build container
-docker build -t https-container .
+docker build -t {IMAGE NAME} .
 
 # run container
-docker run --name httpd -d -p 443:443 -v "$PWD/html":/var/www/html https-container
+docker run -t --name {CONTAINER NAME} -d -p 443:443 -v "$PWD/html":/var/www/html {IMAGE NAME}
 
-# check
-./cipherscan/ciphercscan $(docker-machine ip default) > logs/aaa.log
+# do check
+docker exec {CONTAINER NAME} check.sh {CIPHERS}
