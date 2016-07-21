@@ -1,8 +1,17 @@
-# build container
+# ready
+
+## build container
 docker build -t {IMAGE NAME} .
 
-# run container
+## run container
 docker run -t --name {CONTAINER NAME} -d -p 443:443 -v "$PWD/html":/var/www/html {IMAGE NAME}
 
-# do check
-docker exec {CONTAINER NAME} check.sh {CIPHERS}
+# check command
+
+## check ciphers
+docker exec {CONTAINER NAME} check.sh cipher {CIPHERS}
+
+## check cprotocol
+docker exec {CONTAINER NAME} check.sh protocol {PROTOCOL}
+
+

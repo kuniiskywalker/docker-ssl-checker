@@ -1,12 +1,8 @@
 # RC4系列だけにしてみた
 ciphers = `openssl ciphers -v #{ARGV[0]}`
 
-puts ciphers
-
 # 調査対象サーバー:ポート
-connect_server = "127.0.0.1:443"
-
-puts connect_server
+connect_server = ARGV[1]
 
 check_results = []
 ciphers.each_line{|protocol_suite|
