@@ -1,5 +1,8 @@
 # ready
 
+## copy ssl conf
+cp conf/ssl.conf.original conf/ssl.conf
+
 ## build container
 docker build -t {IMAGE NAME} .
 
